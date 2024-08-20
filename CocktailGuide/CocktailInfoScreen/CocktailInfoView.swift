@@ -55,7 +55,6 @@ final class CocktailInfoView: UIView {
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18)
-        label.text = "Instruction:\n"
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -73,9 +72,17 @@ final class CocktailInfoView: UIView {
     func configure(with cocktail: CocktailDetails) {
         for ingredient in cocktail.ingredients {
             ingredientsLabel.text! += "- \(ingredient)\n"
+            if cocktail.ingredients.isEmpty {
+                ingredientsLabel.text = ""
+            }
         }
         
-        descriptionLabel.text! += "\(cocktail.strInstructions)"
+        if !cocktail.strInstructions.isEmpty {
+            descriptionLabel.text = "Instruction:\n\(cocktail.strInstructions)"
+        } else {
+            descriptionLabel.text = "Doesn`t have instruction"
+            descriptionLabel.textAlignment = .center
+        }
         
         if let urlString = cocktail.strDrinkThumb, let url = URL(string: urlString) {
             imageView.kf.setImage(with: url)
