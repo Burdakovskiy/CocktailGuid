@@ -21,7 +21,7 @@ struct CocktailsResponse: Decodable {
 
 struct Cocktail: Decodable {
     let strDrink: String
-    let strDrinkThumb: String
+    let strDrinkThumb: String?
     let idDrink: String
 }
 
@@ -32,7 +32,7 @@ struct CocktailDetailResponse: Decodable {
 struct CocktailDetails: Decodable {
     let strDrink: String
     let strInstructions: String
-    let strDrinkThumb: String
+    let strDrinkThumb: String?
     let ingredients: [String]
     
     init(from decoder: any Decoder) throws {
@@ -43,7 +43,8 @@ struct CocktailDetails: Decodable {
         
         var ingredients = [String]()
         for i in 1...15 {
-            if let ingredient = try container.decodeIfPresent(String.self, forKey: CodingKeys(stringValue: "strIngredient\(i)")!) {
+            if let key = CodingKeys(stringValue: "strIngredient\(i)"),
+               let ingredient = try container.decodeIfPresent(String.self, forKey: key) {
                 ingredients.append(ingredient)
             }
         }

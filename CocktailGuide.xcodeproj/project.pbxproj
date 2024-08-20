@@ -9,26 +9,42 @@
 /* Begin PBXBuildFile section */
 		680ADECB2C74AEA6006796AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680ADECA2C74AEA6006796AC /* AppDelegate.swift */; };
 		680ADECD2C74AEA6006796AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680ADECC2C74AEA6006796AC /* SceneDelegate.swift */; };
-		680ADECF2C74AEA6006796AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680ADECE2C74AEA6006796AC /* MainViewController.swift */; };
+		680ADECF2C74AEA6006796AC /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680ADECE2C74AEA6006796AC /* CategoryViewController.swift */; };
 		680ADED42C74AEA8006796AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 680ADED32C74AEA8006796AC /* Assets.xcassets */; };
 		680ADED72C74AEA8006796AC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 680ADED62C74AEA8006796AC /* Base */; };
-		680ADEE02C74AF99006796AC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680ADEDF2C74AF99006796AC /* MainView.swift */; };
+		680ADEE02C74AF99006796AC /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680ADEDF2C74AF99006796AC /* CategoryView.swift */; };
 		680ADEE32C74B05C006796AC /* CocktailDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680ADEE22C74B05C006796AC /* CocktailDataModel.swift */; };
 		680ADEE62C74B54F006796AC /* CocktailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680ADEE52C74B54F006796AC /* CocktailService.swift */; };
 		680ADEE92C74B964006796AC /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 680ADEE82C74B964006796AC /* Kingfisher */; };
+		680ADEEB2C74BC8D006796AC /* CoctailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680ADEEA2C74BC8D006796AC /* CoctailCollectionViewCell.swift */; };
+		680ADEED2C74BC9D006796AC /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680ADEEC2C74BC9D006796AC /* UICollectionViewCell+Extension.swift */; };
+		680ADEEF2C74CD0E006796AC /* CocktailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680ADEEE2C74CD0E006796AC /* CocktailsViewController.swift */; };
+		680ADEF12C74CD47006796AC /* CocktailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680ADEF02C74CD47006796AC /* CocktailView.swift */; };
+		680ADEF32C74CE14006796AC /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680ADEF22C74CE14006796AC /* CategoryTableViewCell.swift */; };
+		680ADEF52C74CF0C006796AC /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680ADEF42C74CF0C006796AC /* UITableViewCell+Extension.swift */; };
+		6827FAEE2C75022900D2ADF5 /* CocktailInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6827FAED2C75022900D2ADF5 /* CocktailInfoViewController.swift */; };
+		6827FAF02C75023400D2ADF5 /* CocktailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6827FAEF2C75023400D2ADF5 /* CocktailInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		680ADEC72C74AEA6006796AC /* CocktailGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocktailGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		680ADECA2C74AEA6006796AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		680ADECC2C74AEA6006796AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		680ADECE2C74AEA6006796AC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		680ADECE2C74AEA6006796AC /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		680ADED32C74AEA8006796AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		680ADED62C74AEA8006796AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		680ADED82C74AEA8006796AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		680ADEDF2C74AF99006796AC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		680ADEDF2C74AF99006796AC /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		680ADEE22C74B05C006796AC /* CocktailDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailDataModel.swift; sourceTree = "<group>"; };
 		680ADEE52C74B54F006796AC /* CocktailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailService.swift; sourceTree = "<group>"; };
+		680ADEEA2C74BC8D006796AC /* CoctailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoctailCollectionViewCell.swift; sourceTree = "<group>"; };
+		680ADEEC2C74BC9D006796AC /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		680ADEEE2C74CD0E006796AC /* CocktailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsViewController.swift; sourceTree = "<group>"; };
+		680ADEF02C74CD47006796AC /* CocktailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailView.swift; sourceTree = "<group>"; };
+		680ADEF22C74CE14006796AC /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		680ADEF42C74CF0C006796AC /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		6827FAED2C75022900D2ADF5 /* CocktailInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailInfoViewController.swift; sourceTree = "<group>"; };
+		6827FAEF2C75023400D2ADF5 /* CocktailInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +80,9 @@
 			children = (
 				680ADEDE2C74AF50006796AC /* Core */,
 				680ADEE42C74B540006796AC /* Model */,
-				680ADECE2C74AEA6006796AC /* MainViewController.swift */,
-				680ADEDF2C74AF99006796AC /* MainView.swift */,
+				680ADEF62C74CF9F006796AC /* CategoriesScreen */,
+				680ADEF72C74D0B8006796AC /* CocktailsScreen */,
+				6827FAF12C75023B00D2ADF5 /* CocktailInfoScreen */,
 				680ADEE12C74B040006796AC /* Appearence */,
 			);
 			path = CocktailGuide;
@@ -95,8 +112,47 @@
 			children = (
 				680ADEE22C74B05C006796AC /* CocktailDataModel.swift */,
 				680ADEE52C74B54F006796AC /* CocktailService.swift */,
+				680ADEF82C74D2FB006796AC /* Extensions */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		680ADEF62C74CF9F006796AC /* CategoriesScreen */ = {
+			isa = PBXGroup;
+			children = (
+				680ADECE2C74AEA6006796AC /* CategoryViewController.swift */,
+				680ADEDF2C74AF99006796AC /* CategoryView.swift */,
+				680ADEF22C74CE14006796AC /* CategoryTableViewCell.swift */,
+			);
+			path = CategoriesScreen;
+			sourceTree = "<group>";
+		};
+		680ADEF72C74D0B8006796AC /* CocktailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				680ADEF02C74CD47006796AC /* CocktailView.swift */,
+				680ADEEE2C74CD0E006796AC /* CocktailsViewController.swift */,
+				680ADEEA2C74BC8D006796AC /* CoctailCollectionViewCell.swift */,
+			);
+			path = CocktailsScreen;
+			sourceTree = "<group>";
+		};
+		680ADEF82C74D2FB006796AC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				680ADEEC2C74BC9D006796AC /* UICollectionViewCell+Extension.swift */,
+				680ADEF42C74CF0C006796AC /* UITableViewCell+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6827FAF12C75023B00D2ADF5 /* CocktailInfoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6827FAED2C75022900D2ADF5 /* CocktailInfoViewController.swift */,
+				6827FAEF2C75023400D2ADF5 /* CocktailInfoView.swift */,
+			);
+			path = CocktailInfoScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,11 +231,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				680ADEEB2C74BC8D006796AC /* CoctailCollectionViewCell.swift in Sources */,
 				680ADEE32C74B05C006796AC /* CocktailDataModel.swift in Sources */,
-				680ADECF2C74AEA6006796AC /* MainViewController.swift in Sources */,
-				680ADEE02C74AF99006796AC /* MainView.swift in Sources */,
+				680ADEF12C74CD47006796AC /* CocktailView.swift in Sources */,
+				680ADEEF2C74CD0E006796AC /* CocktailsViewController.swift in Sources */,
+				680ADECF2C74AEA6006796AC /* CategoryViewController.swift in Sources */,
+				680ADEE02C74AF99006796AC /* CategoryView.swift in Sources */,
+				680ADEF32C74CE14006796AC /* CategoryTableViewCell.swift in Sources */,
+				680ADEF52C74CF0C006796AC /* UITableViewCell+Extension.swift in Sources */,
+				6827FAF02C75023400D2ADF5 /* CocktailInfoView.swift in Sources */,
+				680ADEED2C74BC9D006796AC /* UICollectionViewCell+Extension.swift in Sources */,
 				680ADECB2C74AEA6006796AC /* AppDelegate.swift in Sources */,
 				680ADECD2C74AEA6006796AC /* SceneDelegate.swift in Sources */,
+				6827FAEE2C75022900D2ADF5 /* CocktailInfoViewController.swift in Sources */,
 				680ADEE62C74B54F006796AC /* CocktailService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

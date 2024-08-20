@@ -9,12 +9,12 @@ import Foundation
 
 final class CocktailService {
     
-    //MARK: - Properties
+//MARK: - Properties
     
     //Base API URL
     private let baseURL = "https://www.thecocktaildb.com/api/json/v1/1/"
     
-    //MARK: - Functions
+//MARK: - Functions
     
     //Getting and decode categoriesResponse and getting Categories from categoriesResponse
     func fetchCategories() async throws -> [Category] {
@@ -42,5 +42,4 @@ final class CocktailService {
         }
         return cocktail
     }
-    
 }
