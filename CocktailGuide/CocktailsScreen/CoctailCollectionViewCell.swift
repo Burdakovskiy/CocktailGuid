@@ -57,6 +57,8 @@ final class CoctailCollectionViewCell: UICollectionViewCell {
         
         if let urlString = cocktail.strDrinkThumb, let url = URL(string: urlString) {
             imageView.kf.setImage(with: url)
+        } else {
+            imageView.image = UIImage(systemName: "photo")
         }
     }
 }
