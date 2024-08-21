@@ -20,6 +20,7 @@ final class CocktailInfoViewController: UIViewController {
     
     private func setupNavController() {
         title = cocktail.strDrink
+        navigationItem.backButtonTitle = "Back"
         navigationController?.navigationBar.prefersLargeTitles = false
     }
     

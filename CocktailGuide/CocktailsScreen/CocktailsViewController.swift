@@ -25,6 +25,7 @@ class CocktailsViewController: UIViewController {
 //MARK: - Functions
     
     private func setupNavController() {
+        navigationItem.backButtonTitle = "Back"
         title = category?.strCategory ?? "Search Results"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
