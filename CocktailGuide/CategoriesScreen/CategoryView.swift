@@ -27,7 +27,6 @@ final class CategoryView: UIView {
     
     private let categoryTableView: UITableView = {
         let tableView = UITableView()
-        tableView.bounces = false
         tableView.register(CategoryTableViewCell.self,
                            forCellReuseIdentifier: CategoryTableViewCell.cellId)
         tableView.translatesAutoresizingMaskIntoConstraints = false

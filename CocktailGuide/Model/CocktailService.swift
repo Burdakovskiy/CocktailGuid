@@ -42,4 +42,12 @@ final class CocktailService {
         }
         return cocktail
     }
+    
+    //Search cocktail based on user input (query string)
+    func searchCocktails(query: String) async throws -> [Cocktail] {
+        let url = URL(string: "\(baseURL)search.php?s=\(query)")!
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let cocktailResponse = try JSONDecoder().decode(CocktailsResponse.self, from: data)
+        return cocktailResponse.drinks
+    }
 }

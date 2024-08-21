@@ -10,19 +10,30 @@ import Foundation
 import UIKit
 
 class CocktailsViewController: UIViewController {
-
+    
 //MARK: - Properties
     
     private let cocktailService = CocktailService()
     private let cocktailView = CocktailView()
-    private var cocktails = [Cocktail]()
-    var category: Category!
+    var cocktails = [Cocktail]()
+    var category: Category?
+    var isSearchResult: Bool = false
+    var searchQuery: String?
+    var searchController = UISearchController()
+    var isOwnSearchControllerActive = true
     
 //MARK: - Functions
     
     private func setupNavController() {
-        title = category.strCategory
+        title = category?.strCategory ?? "Search Results"
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.searchController = searchController
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        definesPresentationContext = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search,
+                                                            target: self,
+                                                            action: #selector(searchButtonPressed))
     }
     
     private func setupDelegates() {
@@ -30,10 +41,12 @@ class CocktailsViewController: UIViewController {
         cocktailView.setCollectionView(dataSource: self)
     }
     
-    private func loadCategories() {
+    private func loadCocktails() {
         Task {
             do {
-                cocktails = try await cocktailService.fetchCocktails(for: category.strCategory )
+                if let category {
+                    cocktails = try await cocktailService.fetchCocktails(for: category.strCategory )
+                }
                 cocktailView.reloadCollectionView()
             } catch {
                 print("Failed to load categories: \(error)")
@@ -41,16 +54,36 @@ class CocktailsViewController: UIViewController {
         }
     }
     
+    @objc private func searchButtonPressed() {
+        searchController.isActive.toggle()
+        if searchController.isActive {
+            searchController.searchBar.becomeFirstResponder()
+        }
+    }
+    
     override func loadView() {
         super.loadView()
         view = cocktailView
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if isSearchResult {
+            searchController.isActive = true
+            searchController.searchBar.becomeFirstResponder()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDelegates()
         setupNavController()
-        loadCategories()
+        if isSearchResult, let searchQuery {
+            searchController.isActive = true
+            searchController.searchBar.text = searchQuery
+        } else {
+            loadCocktails()
+        }
     }
 }
 
@@ -76,5 +109,43 @@ extension CocktailsViewController: UICollectionViewDataSource {
                                                       for: indexPath) as! CoctailCollectionViewCell
         cell.configure(with: cocktails[indexPath.row])
         return cell
+    }
+}
+
+//MARK: - UISearchResultsUpdating
+extension CocktailsViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let query = searchController.searchBar.text, !query.isEmpty else {
+            if !isOwnSearchControllerActive {
+                navigationController?.popToRootViewController(animated: true)
+            } else {
+                loadCocktails()
+                cocktailView.reloadCollectionView()
+            }
+            return
+        }
+        searchCocktails(query: query)
+    }
+    
+    private func searchCocktails(query: String) {
+        Task {
+            do {
+                cocktails = try await cocktailService.searchCocktails(query: query)
+                cocktailView.reloadCollectionView()
+            } catch {
+                print("Failed to search cocktails: \(error.localizedDescription)")
+            }
+        }
+    }
+}
+//MARK: - UISearchBarDelegate
+extension CocktailsViewController: UISearchBarDelegate {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        if isSearchResult {
+            cocktails.removeAll()
+            navigationController?.popToRootViewController(animated: true)
+        } else {
+            loadCocktails()
+        }
     }
 }
